@@ -22,8 +22,8 @@ import praw
 # Variables:
 fromTop = 1 # The post number after the top post
 url = 'https://reddit.com/r/askreddit/hot.json' # Replace askreddit with whatever subreddit you want
-clientID = "A-uvyQkr1V0sHa27jfRzzA" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
-clientSecret = "liDcB9wgX33TgDXkwsWTFOl1C6Y0ww" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
+clientID = "" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
+clientSecret = "" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
 userAgent = "Comment Extractor by /u/wywessels" # What you are doing and your username
 maxCom = 20 # The amount of comments to pull
 audioLength = 35 # The length of your background video in seconds
