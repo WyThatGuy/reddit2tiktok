@@ -30,6 +30,10 @@ audioLength = 35 # The length of your background video in seconds
 bckgName = 'loop.mp4' # The name of your background video
 otpName = 'out.mp4' # The name of the outputted file
 
+# Functions:
+def renameFile(name):
+    return str(name).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3'
+
 # Delete old files
 if os.path.exists(otpName):
     os.remove(otpName)
@@ -94,18 +98,18 @@ length = 0
 for x in text:
     tts = gTTS(x)
     try:
-        tts.save(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3')
-        length += MP3(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3').info.length
+        tts.save(renameFile(x))
+        length += MP3(renameFile(x)).info.length
         if c == 0:
             titleLength = length
             c = 1
         if length < audioLength:
-            spokenText += [[str(x), MP3(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3').info.length]]
+            spokenText += [[str(x), MP3(renameFile(x)).info.length]]
             print('Text Converted')
             print('Length: ' + str(length))
         else:
-            length -= MP3(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3').info.length
-            os.remove(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3')
+            length -= MP3(renameFile(x)).info.length
+            os.remove(renameFile(x))
     except Exception:
         pass
 
@@ -113,7 +117,7 @@ for x in text:
 clips = []
 for x in text:
     try:
-        clips += [mpe.AudioFileClip(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3')]
+        clips += [mpe.AudioFileClip(renameFile(x))]
     except Exception:
         pass
 audio = mpe.concatenate_audioclips(clips)
@@ -123,8 +127,8 @@ video.write_videofile(otpName)
 
 # Delete audio file
 for x in text:
-    if os.path.exists(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3'):
-        os.remove(str(x).replace('/', '').replace('<', '').replace('>', '').replace('"', '').replace('|', '').replace(':', '').replace('?', '').replace('*', '').replace("\\", '')[:15] + '.mp3')
+    if os.path.exists(renameFile(x)):
+        os.remove(renameFile(x))
 
 clip = mpe.VideoFileClip(otpName)
 
