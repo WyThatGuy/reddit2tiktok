@@ -20,7 +20,7 @@ import praw
 # Comments can be up to ~35 seconds
 
 # Variables:
-fromTop = 1 # The post number after the top post
+fromTop = 1  # The post number after the top post
 url = 'https://reddit.com/r/askreddit/hot.json' # Replace askreddit with whatever subreddit you want
 clientID = "" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
 clientSecret = "" # https://praw.readthedocs.io/en/stable/getting_started/quick_start.html
