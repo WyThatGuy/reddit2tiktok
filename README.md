@@ -4,7 +4,7 @@
 
 **Automatically turn Reddit posts into short-form TikTok-style videos.**  
 
-This Python project pulls **text and images from Reddit** and combines them with a background video and text-to-speech narration to create TikTok-ready clips.  
+This Python project pulls **text and images from Reddit via screenshot** and combines them with a background video and text-to-speech narration to create TikTok-ready clips.  
 
 ---
 
