@@ -1,4 +1,7 @@
 # reddit2tiktok  
+
+> **⚠️ Deprecated** — This project is no longer actively maintained and may break due to API or website changes.
+
 **Automatically turn Reddit posts into short-form TikTok-style videos.**  
 
 This Python project pulls **text and images from Reddit** and combines them with a background video and text-to-speech narration to create TikTok-ready clips.  
@@ -26,12 +29,8 @@ This Python project pulls **text and images from Reddit** and combines them with
 
 ## Requirements  
 
-### 1. Software Dependencies  
-- [**ImageMagick**](https://imagemagick.org/) — required for rendering text as images.  
-- **Python 3.8+** with the following packages:  
-  ```bash
-  pip install selenium moviepy pillow requests
-  ```
+### 1. ImageMagick Software  
+- [**ImageMagick**](https://imagemagick.org/) — required for rendering text as images.
 
 ### 2. ChromeDriver  
 - Download **ChromeDriver** matching your Chrome version: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)  
