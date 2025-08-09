@@ -1,0 +1,8 @@
+gTTS
+moviepy
+mutagen
+numpy
+selenium
+webdriver-manager
+Pillow
+praw
